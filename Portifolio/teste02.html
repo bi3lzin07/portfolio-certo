@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Moderno</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e6ecf2;
+            overflow: hidden;
+            color: #333;
+        }
+
+        #container {
+            display: flex;
+            transition: transform 1s ease-out; /* Transição mais lenta e suave */
+            width: 200%;
+            height: 100vh;
+        }
+
+        .cover,
+        .login {
+            flex: 1;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .cover {
+            background: linear-gradient(135deg, #8e44ad, #3498db);
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .cover h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .cover button {
+            padding: 12px 30px; /* Tamanho do botão um pouco menor */
+            font-size: 1.1rem;
+            background-color: #ffffff;
+            color: #3498db;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cover button:hover {
+            background-color: #3498db;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .login {
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-box {
+            background: #ffffff;
+            padding: 35px 40px; /* Caixa de login com padding menor */
+            border-radius: 15px;
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+            width: 360px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .login-box h2 {
+            font-size: 2rem; /* Tamanho do título um pouco menor */
+            margin-bottom: 25px;
+            color: #333;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-box form {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .login-box input {
+            margin-bottom: 15px; /* Menor margem entre os campos */
+            padding: 12px; /* Menor padding */
+            font-size: 0.95rem; /* Tamanho de fonte menor */
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f4f7fc;
+            transition: border 0.3s ease, background-color 0.3s ease;
+        }
+
+        .login-box input:focus {
+            border-color: #3498db;
+            background-color: #ffffff;
+            outline: none;
+        }
+
+        .login-box button {
+            padding: 12px;
+            font-size: 1rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .login-box button:hover {
+            background-color: #8e44ad;
+            transform: translateY(-5px);
+        }
+
+        .links {
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .links a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Tela de Capa -->
+        <div class="cover">
+            <h1>Bem-vindo ao Portfólio</h1>
+            <button id="btn-entrar">Entrar</button>
+        </div>
+
+        <!-- Tela de Login -->
+        <div class="login">
+            <div class="login-box">
+                <h2>Login</h2>
+                <form onsubmit="handleLogin(event)">
+                    <input type="email" placeholder="E-mail" required />
+                    <input type="password" placeholder="Senha" required />
+                    <button type="submit">Entrar</button>
+                </form>
+                <div class="links">
+                    <a href="#">Cadastrar-se</a>
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const btnEntrar = document.getElementById('btn-entrar');
+        const container = document.getElementById('container');
+
+        btnEntrar.addEventListener('click', () => {
+            container.style.transform = 'translateX(-50%)'; /* Transição suave para a tela de login */
+        });
+
+        function handleLogin(event) {
+            event.preventDefault();
+            alert("Login realizado com sucesso!");
+            // Aqui você pode fazer a validação do login
+            window.location.href = "testt.html"; // Redireciona para a página principal após login
+        }
+    </script>
+</body>
+
+</html>
